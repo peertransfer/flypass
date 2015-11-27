@@ -1,5 +1,6 @@
 *.gem
 *.keep
+*.byebug_history
 *.orig
 *.log
 *.sw[a-e]
