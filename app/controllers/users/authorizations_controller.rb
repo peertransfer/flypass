@@ -1,13 +1,15 @@
 module Users
   class AuthorizationsController < ApplicationController
-    def update
-      debugger
-      credentials = params[:authorizations][:credentials].reject(&:empty?)
-      credentials.each do |credential_id|
-        next if Authorization.where(user_id: params[:user_id], credential_id: credential_id).present?
+    def show
+      user = User.first
+      @credential_ids = user.credentials.pluck(:id)
+    end
 
-        Authorization.create(user_id: params[:user_id], credential_id: credential_id)
-      end
+    def update
+      credential_ids = params[:authorizations][:credentials].reject(&:empty?).map(&:to_i)
+
+      user_id = params[:user_id]
+      AuthorizationService.update(user_id, credential_ids)
     end
   end
 end
