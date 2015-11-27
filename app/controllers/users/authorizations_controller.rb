@@ -1,6 +1,6 @@
 module Users
   class AuthorizationsController < ApplicationController
-    def create
+    def update
       debugger
       credentials = params[:authorizations][:credentials].reject(&:empty?)
       credentials.each do |credential_id|

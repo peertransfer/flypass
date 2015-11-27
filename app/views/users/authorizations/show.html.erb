@@ -1,4 +1,4 @@
-<%= simple_form_for :authorizations do |f| %>
+<%= simple_form_for :authorizations, method: :put do |f| %>
   <%= f.input :credentials, as: :check_boxes, collection: Credential.all, include_blank: false %>
   <%= f.button :submit %>
 <% end %>
