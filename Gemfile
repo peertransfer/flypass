@@ -11,6 +11,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec', '~> 3.4.0'
   gem 'rspec-rails', '~> 3.4.0'
+  gem 'database_cleaner', '~> 1.5.1'
 end
 
 group :development do

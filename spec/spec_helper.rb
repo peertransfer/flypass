@@ -3,6 +3,7 @@ ENV['RAILS_ENV'] ||= 'test'
 require 'rails/application'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
+require 'database_cleaner'
 
 RSpec.configure do |config|
   syntax = :expect
@@ -14,6 +15,11 @@ RSpec.configure do |config|
   end
 
   config.before(:each) do
+    example = RSpec.current_example
+
+    DatabaseCleaner[:active_record].strategy = :transaction
+    DatabaseCleaner.start
+    DatabaseCleaner.clean
   end
 
   config.after(:each) do
