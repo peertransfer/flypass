@@ -1,7 +1,7 @@
 module Users
   class AuthorizationsController < ApplicationController
     def show
-      user = User.first
+      user = User.find(params[:user_id])
       @credential_ids = user.credentials.pluck(:id)
     end
 
