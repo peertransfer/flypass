@@ -21,7 +21,7 @@ module Plugins
         agent.get(CHANGE_PASSWORD_URL) do |page|
           response = page.form_with(:action => CHANGE_PASSWORD_FORM_ACTION) do |form|
             parsing = parse_form(form)
-            raise ParsingError.new(parsing.messages) unless parsing.success?
+            raise ParsingError.new(parsing.error) unless parsing.success?
             form[CURRENT_PASSWORD_FORM_FIELD] = current_password
             form[NEW_PASSWORD_FORM_FIELD] = new_password
             form[NEW_PASSWORD_CONFIRMATION_FORM_FIELD] = new_password

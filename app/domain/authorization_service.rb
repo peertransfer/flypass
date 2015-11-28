@@ -19,6 +19,15 @@ class AuthorizationService
     credential_ids.each do |credential_id|
       authorization = Authorization.find_by(credential_id: credential_id, user_id: user_id)
       authorization.destroy
+
+      credential = Credential.find(credential_id)
+
+      plugin_class = "Plugins::#{credential.name.capitalize}".constantize
+
+      new_password = SecureRandom.urlsafe_base64
+
+      plugin_class.change_password(credential.username, credential.password, new_password)
+      credential.update_attributes(password: new_password)
     end
   end
 end

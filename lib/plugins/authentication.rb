@@ -51,7 +51,7 @@ module Plugins
       end
 
       def self.authentication_success
-        OpenStruct.new(:success? => true, :cookies => @agent.cookie_jar)
+        OpenStruct.new(:success? => true, :cookies => agent.cookie_jar)
       end
 
       def self.parse_form(form)
