@@ -10,6 +10,9 @@ module Users
 
       user_id = params[:user_id]
       AuthorizationService.update(user_id, credential_ids)
+
+      flash[:notice] = 'Credentials updated successfully'
+      redirect_to user_authorizations_path(user_id: user_id)
     end
   end
 end
