@@ -1,15 +1,17 @@
-<table>
-  <tr>
-    <th>Service</th>
-    <th>Username</th>
-    <th>Password</th>
-  </tr>
-
-  <% @authorizations.each do |authorization| %>
+<div class="container">
+  <table class="table">
     <tr>
-      <td><%= authorization.credential.name %></td>
-      <td><%= authorization.credential.username %></td>
-      <td><%= authorization.credential.password %></td>
+      <th>Service</th>
+      <th>Username</th>
+      <th>Password</th>
     </tr>
-  <% end %>
-</table>
+
+    <% @authorizations.each do |authorization| %>
+      <tr>
+        <td><%= authorization.credential.name %></td>
+        <td><%= authorization.credential.username %></td>
+        <td><%= authorization.credential.password %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
