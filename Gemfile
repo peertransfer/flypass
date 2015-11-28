@@ -6,6 +6,7 @@ gem 'sass-rails', '>= 3.2'
 gem 'sqlite3', '~> 1.3.11'
 gem 'simple_form', '~> 3.2.0'
 gem 'mechanize'
+gem 'bcrypt'
 
 group :development, :test do
   gem 'byebug'
