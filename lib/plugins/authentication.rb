@@ -29,7 +29,7 @@ module Plugins
       private
 
       def self.agent
-        ag ||= Mechanize.new { |agent|
+        @ag ||= Mechanize.new { |agent|
           agent.user_agent_alias = 'Mac Safari'
         }
       end
