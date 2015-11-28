@@ -35,5 +35,40 @@ describe AuthorizationService do
     expect(Plugins::Twitter).to receive(:change_password).with(credential.username, credential.password, secure_random)
 
     AuthorizationService.update(user.id, [])
+
+    expect(Credential.find(credential.id).password).to eq(secure_random)
   end
+
+  it 'creates a crendential' do
+    credential = Credential.where('wadus')
+    authorization = Authorization.where('wadus')
+
+    expect(credential).to_not be_present
+    expect(authorization).to_not be_present
+
+    AuthorizationService.create_credential('wadus')
+
+    credential = Credential.where('wadus')
+    authorization = Authorization.where('wadus', encrypted_credential_key: 'ojete')
+
+    expect(credential).to be_present
+    expect(authorization).to be_present
+  end
+
+  it 'creates a credential' do
+    admin = User.create(email: 'wadus@wadus.com', password: '123456')
+    AuthorizationService.create_credential('wadus')
+
+    
+
+
+
+
+  # it 'changes the password of a crendential using a secure approach' do
+  #   cipher = OpenSSL::Cipher.new('AES-256-CBC')
+  #   cipher.encrypt
+  #   key = cipher.random_key
+  #   iv = cipher.random_iv
+  #   encrypted_password = cipher.update(data) + cipher.final
+  # end
 end
