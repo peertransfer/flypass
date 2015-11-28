@@ -5,8 +5,8 @@ describe User do
   let (:user) { User.create(email: 'foo@bar.com', password: password) }
 
   it 'knows his password' do
-    expect(user.password_is?(password)).to eq(true)
-    expect(user.password_is?('wrong')).to eq(false)
+    expect(user.password == password).to eq(true)
+    expect(user.password == 'wrong').to eq(false)
   end
 
   it 'has a generated pair key' do
@@ -19,7 +19,7 @@ describe User do
 
     encrypted_data = user.encrypt_with_public_key(data)
 
-    decrypted_data = user.new_decrypt_with_private_key(encrypted_data, password)
+    decrypted_data = user.decrypt_with_private_key(encrypted_data, password)
 
     expect(decrypted_data).to eq(data)
   end
