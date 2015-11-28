@@ -1,26 +1,39 @@
+# Flypass
 
-## Getting started
+Corporate password manager that automatically changes passwords for services.
 
-Require ruby 2.2.2p95
+## Requirements
+ - Ruby 2.2.2p95
+ - bundle gem
 
+## Setup
 ```
 $ bundle install
 ```
 
-## Development
+## Usage
+
+The app has two interfaces
+
 ```
 $ script/server
 ```
 
-## Test
+###### User interface
+Open on your browser
+
+```
+http://localhost:3000/account/authorizations
+```
+
+###### Admin interface
+Open on your browser
+
+```
+http://localhost:3000/admin/users/1/authorizations
+```
+
+## Tests
 ```
 $ bundle exec rspec
 ```
-
-## Usage
-
-#### Admin view
-/admin/users/1/authorizations
-
-#### User view
-/account/authorizations
