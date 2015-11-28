@@ -19,8 +19,8 @@ $ bundle exec rspec
 
 ## Usage
 
-### Admin view
+#### Admin view
 /admin/users/1/authorizations
 
-### User view
+#### User view
 /account/authorizations
