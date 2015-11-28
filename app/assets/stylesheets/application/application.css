@@ -1,7 +1,12 @@
 .bg-header {
-  background-color: #555;
+  background-color: #12141C;
 }
 
-.color-white {
-  color: white;
+.icon-header {
+  display: "inline-block"
+}
+
+.heading-header {
+  color: #BCC1D8;
+  display: "inline-block"
 }
