@@ -1,5 +1,5 @@
-require_relative 'authentication'
-require_relative 'account'
+require_relative './twitter/authentication'
+require_relative './twitter/account'
 
 module Plugins
   module Twitter
