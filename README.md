@@ -19,6 +19,13 @@ The app has two interfaces
 $ script/server
 ```
 
+###### Admin interface
+Open on your browser
+
+```
+http://localhost:3000/users/1/authorizations
+```
+
 ###### User interface
 Open on your browser
 
@@ -26,12 +33,6 @@ Open on your browser
 http://localhost:3000/account/authorizations
 ```
 
-###### Admin interface
-Open on your browser
-
-```
-http://localhost:3000/admin/users/1/authorizations
-```
 
 ## Tests
 ```
