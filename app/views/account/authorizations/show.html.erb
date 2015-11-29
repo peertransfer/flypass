@@ -1,17 +1,39 @@
 <div class="container">
-  <table class="table">
-    <tr>
-      <th>Service</th>
-      <th>Username</th>
-      <th>Password</th>
-    </tr>
+  <div class="row">
+    <div class="col-md-6">
+      <h4>Your credentials</h4>
+      <table class="table">
+        <tr>
+          <th>Service</th>
+          <th>Username</th>
+          <th>Password</th>
+        </tr>
+        <% @authorizations.each do |authorization| %>
+          <tr>
+            <td><%= authorization.credential.name %></td>
+            <td><%= authorization.credential.username %></td>
+            <td><%= authorization.credential.password %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+    <div class="col-md-6">
+      <h4>Audit Log</h4>
+      <table class="table">
+        <tr>
+          <th>Service</th>
+          <th>Action</th>
+          <th>Date</th>
+        </tr>
 
-    <% @authorizations.each do |authorization| %>
-      <tr>
-        <td><%= authorization.credential.name %></td>
-        <td><%= authorization.credential.username %></td>
-        <td><%= authorization.credential.password %></td>
-      </tr>
-    <% end %>
-  </table>
+        <% @authorization_audits.each do |auth_audit| %>
+          <tr>
+            <td><%= auth_audit.credential.name %></td>
+            <td><%= auth_audit.action %></td>
+            <td><%= auth_audit.date %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
 </div>

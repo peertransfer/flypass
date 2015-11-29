@@ -9,6 +9,7 @@ Bundler.require(*Rails.groups)
 
 module Flypass
   class Application < Rails::Application
+    config.authorization_audit_secret = 'EfxWj$8cnF2Ntj!Tdh-xk)74w'
     config.autoload_paths += %W(#{config.root}/lib)
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

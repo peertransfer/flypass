@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151128000647) do
+ActiveRecord::Schema.define(version: 20151128200345) do
+
+  create_table "authorization_audits", force: :cascade do |t|
+    t.string   "action"
+    t.integer  "executed_by_user_id"
+    t.integer  "executed_for_user_id"
+    t.integer  "credential_id"
+    t.datetime "date"
+    t.string   "checksum"
+  end
 
   create_table "authorizations", force: :cascade do |t|
     t.integer  "user_id"
