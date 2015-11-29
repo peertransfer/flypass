@@ -1,7 +1,7 @@
 class AuthorizationAudit < ActiveRecord::Base
   belongs_to :credential
   before_save :set_checksum, :set_date
-  attr_reader :checksum, :date
+  attr_reader :checksum
 
   private
 
