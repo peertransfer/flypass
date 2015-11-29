@@ -1,5 +1,6 @@
 *.gem
 *.keep
+*.DS_Store
 *.byebug_history
 *.orig
 *.log

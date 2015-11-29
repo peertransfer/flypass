@@ -1,4 +1,0 @@
-<%= simple_form_for :authorizations, method: :put do |f| %>
-  <%= f.input :credentials, as: :check_boxes, collection: Credential.all, value_method: :id, label_method: :name, include_blank: false, checked: @credential_ids %>
-  <%= f.button :submit %>
-<% end %>

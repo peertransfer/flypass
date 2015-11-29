@@ -1,0 +1,7 @@
+development:
+  api_key: "foo"
+  host: "http://errors.peertransfer.in"
+
+test:
+  api_key: "foo"
+  host: "http://errors.peertransfer.in"

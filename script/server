@@ -1,1 +1,2 @@
-bundle exec rails s -b 0.0.0.0
+#!/bin/sh
+bundle exec rackup -p 9292 config.ru -o 0.0.0.0
