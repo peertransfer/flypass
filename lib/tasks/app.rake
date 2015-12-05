@@ -1,7 +1,9 @@
 namespace :db do
   require "sequel"
+  require "sqlite3"
+
   Sequel.extension :migration
-  DB = Sequel.sqlite
+  DB = Sequel.sqlite("./db/development.db")
 
   desc "Prints current schema version"
   task :version do

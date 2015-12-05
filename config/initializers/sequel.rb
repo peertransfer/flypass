@@ -1,3 +1,3 @@
 require 'sequel'
 
-DB = Sequel.sqlite
+DB = Sequel.sqlite("./db/development.db")
