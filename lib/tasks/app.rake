@@ -18,4 +18,21 @@ namespace :db do
     Sequel::Migrator.run(DB, migrations_directory)
     Rake::Task['db:version'].execute
   end
+
+  desc "Perform rollback to specified target or full rollback as default"
+  task :rollback, :target do |t, args|
+    migrations_directory = "#{File.dirname(__FILE__)}/../../db/migrations"
+    args.with_defaults(:target => 0)
+
+    Sequel::Migrator.run(DB, migrations_directory, :target => args[:target].to_i)
+    Rake::Task['db:version'].execute
+  end
+
+  desc "Perform migration reset (full rollback and migration)"
+  task :reset do
+    migrations_directory = "#{File.dirname(__FILE__)}/../../db/migrations"
+    Sequel::Migrator.run(DB, migrations_directory, :target => 0)
+    Sequel::Migrator.run(DB, migrations_directory)
+    Rake::Task['db:version'].execute
+  end
 end
