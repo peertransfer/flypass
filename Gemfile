@@ -4,6 +4,9 @@ gem 'sinatra', '~> 1.4.6'
 
 gem 'airbrake', '~> 4.1.0'
 gem 'foreman', '~> 0.62.0', require: false
+gem 'sqlite3', '~> 1.3.11'
+gem 'sequel', '~> 4.29.0'
+gem 'rake', '~> 10.4.2'
 
 group :development do
   gem 'thin', '~> 1.6.3'
