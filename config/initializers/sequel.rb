@@ -1,3 +1,3 @@
 require 'sequel'
 
-DB = Sequel.sqlite("./db/development.db")
+DB = Sequel.sqlite("./db/#{ENV['RACK_ENV']}.db")

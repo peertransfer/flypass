@@ -37,4 +37,13 @@ namespace :db do
     Sequel::Migrator.run(DB, migrations_directory)
     Rake::Task['db:version'].execute
   end
+
+  desc "Perform migration up to latest migration available on the test database"
+  task :test_prepare do
+    db = Sequel.sqlite("./db/test.db")
+    migrations_directory = "#{File.dirname(__FILE__)}/../../db/migrations"
+    Sequel::Migrator.run(db, migrations_directory, :target => 0)
+    Sequel::Migrator.run(db, migrations_directory)
+    Rake::Task['db:version'].execute
+  end
 end
