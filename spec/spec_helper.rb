@@ -10,10 +10,10 @@ RSpec.configure do |config|
   config.mock_with(:rspec) { |c| c.syntax = syntax }
 
   config.before(:each) do
-    example = RSpec.current_example
-
-    DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.start
+  end
+
+  config.after(:each) do
     DatabaseCleaner.clean
   end
 
