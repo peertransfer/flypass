@@ -17,3 +17,6 @@ initializer_paths = Dir[MyApplication.root + '/config/initializers/*.rb']
 initializer_paths.each { |file| require file }
 
 require 'config/dispatcher'
+
+require 'app/domain/user/entity'
+require 'app/domain/user/collection'

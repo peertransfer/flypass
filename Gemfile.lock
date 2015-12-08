@@ -5,6 +5,7 @@ GEM
       builder
       multi_json
     builder (3.2.2)
+    byebug (8.2.1)
     daemons (1.2.3)
     database_cleaner (1.5.1)
     diff-lcs (1.2.5)
@@ -55,6 +56,7 @@ PLATFORMS
 
 DEPENDENCIES
   airbrake (~> 4.1.0)
+  byebug
   database_cleaner (~> 1.5.1)
   foreman (~> 0.62.0)
   newrelic_rpm (~> 3.7.3.204)
